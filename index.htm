@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SPRITES ANIMATION</title>
+<style>
+#holdpic {
+width: 200px;
+height: 100px;
+background:pink;
+}
+
+</style>
+</head>
+
+<body>
+<div id='holdpic'></div>
+<button onclick="idle()">Idle Girl</button>
+<button onclick="walk()">Walk Girl</button>
+<button onclick="dead()">Dead Girl</button>
+<button onclick="jump()">Jump Girl</button>
+<button onclick="run()">Run Girl</button>
+<button onclick="runjump()">Run and jump</button>
+
+
+<script>
+girlrun = [
+"girl/Run (1).png",
+"girl/Run (2).png",
+"girl/Run (3).png",
+"girl/Run (4).png",
+"girl/Run (5).png",
+"girl/Run (6).png",
+"girl/Run (7).png",
+"girl/Run (8).png",
+"girl/Run (9).png",
+"girl/Run (10).png",
+"girl/Run (11).png",
+"girl/Run (12).png",
+"girl/Run (13).png",
+"girl/Run (14).png",
+"girl/Run (15).png",
+"girl/Run (16).png",
+"girl/Run (17).png",
+"girl/Run (18).png",
+"girl/Run (19).png",
+"girl/Run (20).png"
+];
+
+girljump = [
+"girl/Jump (1).png",
+"girl/Jump (2).png",
+"girl/Jump (3).png",
+"girl/Jump (4).png",
+"girl/Jump (5).png",
+"girl/Jump (6).png",
+"girl/Jump (7).png",
+"girl/Jump (8).png",
+"girl/Jump (9).png",
+"girl/Jump (10).png",
+"girl/Jump (11).png",
+"girl/Jump (12).png",
+"girl/Jump (13).png",
+"girl/Jump (14).png",
+"girl/Jump (15).png",
+"girl/Jump (16).png",
+"girl/Jump (17).png",
+"girl/Jump (18).png",
+"girl/Jump (19).png",
+"girl/Jump (20).png",
+"girl/Jump (21).png",
+"girl/Jump (22).png",
+"girl/Jump (23).png",
+"girl/Jump (24).png",
+"girl/Jump (25).png",
+"girl/Jump (26).png",
+"girl/Jump (27).png",
+"girl/Jump (28).png",
+"girl/Jump (29).png",
+"girl/Jump (30).png"
+]
+
+girlidle = [
+"girl/Idle (1).png",
+"girl/Idle (2).png",
+"girl/Idle (3).png",
+"girl/Idle (4).png",
+"girl/Idle (5).png",
+"girl/Idle (6).png",
+"girl/Idle (7).png",
+"girl/Idle (8).png",
+"girl/Idle (9).png",
+"girl/Idle (10).png",
+"girl/Idle (11).png",
+"girl/Idle (12).png",
+"girl/Idle (13).png",
+"girl/Idle (14).png",
+"girl/Idle (15).png",
+"girl/Idle (16).png",
+];
+
+
+girlwalk = [
+"girl/Walk (1).png",
+"girl/Walk (1).png",
+"girl/Walk (2).png",
+"girl/Walk (3).png",
+"girl/Walk (4).png",
+"girl/Walk (5).png",
+"girl/Walk (6).png",
+"girl/Walk (7).png",
+"girl/Walk (8).png",
+"girl/Walk (9).png",
+"girl/Walk (10).png",
+"girl/Walk (11).png",
+"girl/Walk (12).png",
+"girl/Walk (13).png",
+"girl/Walk (14).png",
+"girl/Walk (15).png",
+"girl/Walk (16).png",
+"girl/Walk (17).png",
+"girl/Walk (18).png",
+"girl/Walk (19).png",
+"girl/Walk (20).png"
+];
+
+deadgirl = [
+"girl/Dead (1).png",
+"girl/Dead (2).png",
+"girl/Dead (3).png",
+"girl/Dead (4).png",
+"girl/Dead (5).png",
+"girl/Dead (6).png",
+"girl/Dead (7).png",
+"girl/Dead (8).png",
+"girl/Dead (9).png",
+"girl/Dead (10).png",
+"girl/Dead (11).png",
+"girl/Dead (12).png",
+"girl/Dead (13).png",
+"girl/Dead (14).png",
+"girl/Dead (15).png",
+"girl/Dead (16).png",
+"girl/Dead (17).png",
+"girl/Dead (18).png",
+"girl/Dead (19).png",
+"girl/Dead (20).png",
+"girl/Dead (21).png",
+"girl/Dead (22).png",
+"girl/Dead (23).png",
+"girl/Dead (24).png",
+"girl/Dead (25).png",
+"girl/Dead (26).png",
+"girl/Dead (27).png",
+"girl/Dead (28).png",
+"girl/Dead (29).png",
+"girl/Dead (30).png"
+]
+
+l=0;
+
+idle();
+
+
+// girl idle
+
+function idle(){
+
+for (i=0; i < girlidle.length - 1; i++) {
+	typer(i)
+}
+
+function typer(i) {
+setTimeout(function() {
+document.getElementById("holdpic").innerHTML = '<img src="' + girlidle[++i] + '" height="100" />';
+ }, 100 * i);
+
+};
+clearTimeout();
+}
+
+// girl walk
+
+function walk(){
+
+for (i=0; i < girlwalk.length - 1; i++) {
+	typer(i)
+}
+
+function typer(i) {
+setTimeout(function() {
+document.getElementById("holdpic").innerHTML = '<img src="' + girlwalk[++i] + '" height="100" />';
+ }, 50 * i);
+};
+location1();
+clearTimeout();
+
+}
+
+// girl dead
+
+function dead(){
+
+for (i=0; i < deadgirl.length - 1; i++) {
+	typer(i)
+}
+
+function typer(i) {
+setTimeout(function() {
+document.getElementById("holdpic").innerHTML = '<img src="' + deadgirl[++i] + '" height="100" />';
+ }, 100 * i);
+};
+clearTimeout();
+
+}
+
+// girl jump
+
+function jump(){
+
+for (i=0; i < girljump.length - 1; i++) {
+	typer(i)
+}
+
+function typer(i) {
+setTimeout(function() {
+document.getElementById("holdpic").innerHTML = '<img src="' + girljump[++i] + '" height="100" />';
+ }, 50 * i);
+};
+clearTimeout();
+
+}
+
+// girl run
+
+function run(){
+
+for (i=0; i < girlrun.length - 1; i++) {
+	typer(i)
+}
+
+function typer(i) {
+setTimeout(function() {
+document.getElementById("holdpic").innerHTML = '<img src="' + girlrun[++i] + '" height="100" />';
+ }, 50 * i);
+};
+
+clearTimeout();
+
+}
+
+// run and jump
+
+function runjump() {
+clearTimeout();
+run();
+
+setTimeout(function() {
+jump();
+ }, 1050);
+
+setTimeout(function() {
+idle();
+ }, 2850);
+clearTimeout();
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
